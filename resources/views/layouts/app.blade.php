@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Styles -->
         @vite('resources/js/app.js')
-        <title>Laravel Comics</title>
+        <title>Laravel DC Comics</title>
     </head>
     <body>
         @include('partials.header')

@@ -47,7 +47,12 @@ class ComicsController extends Controller
      */
     public function show($id)
     {
-        //
+        // se non trova comic restituisce 404
+        $comic = Comic::findOrFail($id);
+        $single_comic = [
+            'comic'=> $comic
+        ];
+        return view('comics.show', $single_comic);
     }
 
     /**

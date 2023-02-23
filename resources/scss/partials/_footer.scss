@@ -1,0 +1,87 @@
+footer {
+    .top-footer {
+        background-image: url('/resources/img/footer-bg.jpg');
+        background-size: cover;
+
+        .container {
+            background-image: url('/resources/img/dc-logo-bg.png');
+            background-repeat: no-repeat;
+            background-position: right;
+
+            .footer-links {
+                padding: 1rem 0;
+                display: flex;
+
+                .links {
+                    margin-right: 2rem;
+
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+
+                        li a {
+                            color: grey;
+
+                            &:hover,
+                            &:active {
+                                color: white
+                            }
+                        }
+                    }
+
+                    h2 {
+                        color: white;
+                        padding: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-footer {
+        background-color: #303030;
+
+        .container {
+            height: 100px;
+
+            .row {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 100%;
+            }
+
+            .login {
+                font-size: 20px;
+                font-weight: 400;
+                padding: 0.5rem 1rem;
+                color: white;
+                border: 2px solid #0282F9;
+
+                &:hover,
+                &:active {
+                    background-color: #0282F9;
+                }
+            }
+
+            .social {
+                display: flex;
+
+                h2 {
+                    color: #0282F9;
+                    padding: 0 2rem;
+                    margin-bottom: 0;
+                }
+
+                ul {
+                    margin-bottom: 0;
+
+                    li {
+                        display: inline-block;
+                        padding: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

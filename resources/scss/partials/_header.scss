@@ -1,0 +1,41 @@
+header {
+    padding: 1rem;
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            width: 80px;
+        }
+
+        nav {
+            height: 80px;
+
+            ul {
+                text-transform: uppercase;
+                height: 100%;
+                display: flex;
+                justify-content: end;
+
+                li a {
+                    display: flex;
+                    align-items: center;
+                    font-size: 15px;
+                    font-weight: 700;
+                    padding: 0rem 1rem;
+                    height: 100%;
+                    border-bottom: 5px solid white;
+                    color: black;
+
+                    &:hover {
+                        color: #0282F9;
+                        border-bottom: 5px solid #0282F9;
+                    }
+                }
+            }
+        }
+    }
+
+}

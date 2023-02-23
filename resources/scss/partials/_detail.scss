@@ -1,0 +1,89 @@
+#detail {
+    .bar-light-blue {
+        background-color: #0282F9;
+        height: 60px;
+
+        .container-small {
+            position: relative;
+
+            .cover {
+                border: 3px solid white;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateY(15%);
+
+                .comic-book {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: #0282F9;
+                    color: white;
+                    text-transform: uppercase;
+                    padding: 0 0.5rem;
+                }
+
+                .gallery {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: #0282F9;
+                    color: white;
+                    text-transform: uppercase;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .col-8 {
+        padding: 1rem;
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        p {
+            padding-top: 1rem;
+        }
+
+        .bg-green {
+            background-color: #55BA59;
+
+
+            span {
+                color: white;
+            }
+
+            .col-9,
+            .col-3 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .adv {
+        text-align: end;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .table {
+
+        tbody {
+            font-size: 12px;
+
+            .caption {
+                width: 30%;
+            }
+        }
+    }
+
+}

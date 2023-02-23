@@ -10,14 +10,14 @@
             @foreach ($comics as $comic)
             <div class="card">
                     {{-- tra parentesi quadre metto il nome del parametro con il relativo valore --}}
-                    {{-- <a href="{{ route( 'detail', ['slug' => $comic['slug']] ) }}"> --}}
+                    <a href="{{ route( 'comics.show', ['comic' => $comic['id']] ) }}">
                         <div class="card-image">
                             <img src="{{$comic['thumb']}}" alt="">
                         </div>
                         <div class="card-title">
                             <span>{{ $comic['title'] }}</span>
                         </div>
-                    {{-- </a> --}}
+                    </a>
                 </div>
             @endforeach
         </div>

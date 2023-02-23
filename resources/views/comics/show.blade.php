@@ -5,8 +5,8 @@
     <div class="bar-light-blue">
         <div class="container-small">
             <div class="cover">
-                <span class="comic-book">{{ $single_comic['type']}}</span>
-                <img src="{{$single_comic['thumb']}}" alt="cover">
+                <span class="comic-book">{{ $comic['type']}}</span>
+                <img src="{{$comic['thumb']}}" alt="cover">
                 <span class="gallery">view gallery</span>
             </div>
         </div>
@@ -14,11 +14,11 @@
     <div class="container-small">
         <div class="row my-5">
             <div class="col-8">
-                <h2><strong>{{ $single_comic['title'] }}</strong></h2>
+                <h2><strong>{{ $comic['title'] }}</strong></h2>
                 <div class="d-flex bg-green">
                     <div class="col-9">
                         <div class="col-auto">
-                            <span><strong>U.S. Price: </strong>{{ $single_comic['price']}}</span>
+                            <span><strong>U.S. Price: </strong>{{ $comic['price']}}</span>
                         </div>
                         <div class="col-auto">
                             <span>AVAILABLE</span>
@@ -28,7 +28,7 @@
                         <span>CHECK</span>
                     </div>
                 </div>
-                <p>{{$single_comic['description']}}</p>
+                <p>{{$comic['description']}}</p>
             </div>
             <div class="col-4 adv">
                 <span>ADVERTISEMENT</span>
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <div class="row pb-3">
+        {{-- <div class="row pb-3">
             <div class="col-6">
                 <table class="table">
                     <thead>
@@ -76,7 +76,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection

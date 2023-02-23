@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController as PagesController;
-// use App\Http\Controllers\ComicController as ComicController;
+use App\Http\Controllers\ComicsController as ComicsController;
 
 
 /*
@@ -18,9 +18,7 @@ use App\Http\Controllers\PagesController as PagesController;
 
 Route::get('/', [PagesController::class,'index'])->name('homepage');
 
-// Route::get('/', [ComicController::class,'index'])->name('comics');
-
-// Route::get('/comics/{slug}', [ComicController::class, 'show'])->name('detail');
+Route::resource('comics', ComicsController::class);
 
 Route::get('/characters', function () {
     return view('characters');

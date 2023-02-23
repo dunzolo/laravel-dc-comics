@@ -7,6 +7,9 @@
     <div class="container">
         <span class="top-label-light-blue">Current series</span>
         <div class="row">
+            <div class="d-flex justify-content-end">
+                <a href="{{ route('comics.create')}}" class="btn btn-primary">AGGIUNGI</a>
+            </div>
             @foreach ($comics as $comic)
             <div class="card">
                     {{-- tra parentesi quadre metto il nome del parametro con il relativo valore --}}

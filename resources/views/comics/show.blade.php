@@ -36,47 +36,10 @@
                     <img src="{{Vite::asset('resources/img/adv.jpg')}}" alt="adv">
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                <a href="{{ route('comics.index')}}" class="btn btn-primary">Torna a elenco completo</a>
+            </div>
         </div>
-        {{-- <div class="row pb-3">
-            <div class="col-6">
-                <table class="table">
-                    <thead>
-                      <tr><th colspan="2"><h2>Talent</h2></th></tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="caption"><strong>Art by:</strong></td>
-                        <td><a href="#">{{ $single_comic['artists'] }}</a></td>
-                      </tr>
-                      <tr>
-                        <td class="caption"><strong>Written by:</strong></td>
-                        <td><a href="#">{{ $single_comic['writers'] }}</a></td>
-                      </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-6">
-                <table class="table">
-                    <thead>
-                      <tr><th colspan="2"><h2>Specs</h2></th></tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="caption"><strong>Series:</strong></td>
-                        <td><a href="#">{{$single_comic['series']}}</a></td>
-                      </tr>
-                      <tr>
-                        <td class="caption"><strong>U.S. Price:</strong></td>
-                        <td>{{$single_comic['price']}}</td>
-                      </tr>
-                      <tr>
-                        <td class="caption"><strong>On Sale Date:</strong></td>
-                        <td>{{$single_comic['sale_date']}}</td>
-                      </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> --}}
     </div>
 </div>
 @endsection

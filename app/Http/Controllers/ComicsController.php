@@ -84,7 +84,12 @@ class ComicsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // se non trova comic restituisce 404
+        $comic = Comic::findOrFail($id);
+        $data = [
+            'comic'=> $comic
+        ];
+        return view('comics.edit', $data);
     }
 
     /**
@@ -96,7 +101,24 @@ class ComicsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        // CHIAVE-> utilizzare i valori degli attrivuti name dei campi input
+        $request->validate([
+            'title' => 'required | max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable',
+            'price' => 'required | max:10',
+            'series' => 'required | max:50',
+            'sale_date' => 'required',
+            'type' => 'required | max:30'
+        ]);
+
+        $form_data = $request->all();
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
     /**

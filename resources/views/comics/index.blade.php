@@ -13,14 +13,20 @@
             @foreach ($comics as $comic)
             <div class="card">
                     {{-- tra parentesi quadre metto il nome del parametro con il relativo valore --}}
-                    <a href="{{ route( 'comics.show', ['comic' => $comic['id']] ) }}">
-                        <div class="card-image">
-                            <img src="{{$comic['thumb']}}" alt="">
+                    <div class="card-image">
+                        <img src="{{$comic['thumb']}}" alt="">
+                        <div class="show-icon">
+                            <a href="{{ route('comics.show', ['comic' => $comic['id']])}}" class="btn btn-info btn-sm btn-square" title="Dettaglio">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a href="{{ route('comics.edit', ['comic' => $comic['id']])}}" class="btn btn-warning btn-sm btn-square" title="Modifica">
+                                <i class="fas fa-edit"></i>
+                            </a>
                         </div>
-                        <div class="card-title">
-                            <span>{{ $comic['title'] }}</span>
-                        </div>
-                    </a>
+                    </div>
+                    <div class="card-title">
+                        <span>{{ $comic['title'] }}</span>
+                    </div>
                 </div>
             @endforeach
         </div>

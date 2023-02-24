@@ -11,6 +11,7 @@
             </div>
         </div>
         <div>
+            {{-- validazioen degli errori --}}
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul class="mb-0 ps-0">
@@ -19,13 +20,17 @@
                     @endforeach
                 </ul>
             </div>
-        @endif
+            @endif
         </div>
         <form action="{{ route('comics.store')}}" method="POST">
             @csrf
             <div class="form-group mb-3">
                 <label class="control-label">TITOLO</label>
                 <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo">
+                {{-- singolo messaggio di errore --}}
+                @error ('title')
+                    <div class="text-danger">{{$message}}</div>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label class="control-label">TIPOLOGIA</label>
@@ -37,22 +42,36 @@
             <div class="form-group mb-3">
                 <label class="control-label">SERIES</label>
                 <input type="text" name="series" class="form-control" placeholder="Inserisci la serie">
+                {{-- singolo messaggio di errore --}}
+                @error ('series')
+                    <div class="text-danger">{{$message}}</div>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label class="control-label">PREZZO</label>
                 <input type="text" name="price" class="form-control" placeholder="Inserisci il prezzo">
+                {{-- singolo messaggio di errore --}}
+                @error ('price')
+                    <div class="text-danger">{{$message}}</div>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label class="control-label">DATA</label>
                 <input type="text" name="sale_date" class="form-control" placeholder="Inserisci la data">
+                {{-- singolo messaggio di errore --}}
+                @error ('sale_date')
+                    <div class="text-danger">{{$message}}</div>
+                @enderror
             </div>
             <div class="form-group mb-3">
                 <label class="control-label">IMMAGINE</label>
                 <input type="text" name="thumb" class="form-control" placeholder="Inserisci il link dell'immagine">
+                {{-- essendo nullable, la validazione dell'errore non è obbligatorio --}}
             </div>
             <div class="form-group mb-3">
                 <label class="control-label">DESCRIZIONE</label>
                 <textarea class="form-control" name="description" placeholder="Inserisci la descrizione"></textarea>
+                {{-- essendo nullable, la validazione dell'errore non è obbligatorio --}}
             </div>
             <div class="form-group mb-3">
                 <button type="submit" class="btn btn-success">Salva</button>

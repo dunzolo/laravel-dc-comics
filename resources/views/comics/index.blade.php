@@ -8,7 +8,7 @@
         <span class="top-label-light-blue">Current series</span>
         <div class="row">
             <div class="d-flex justify-content-end">
-                <a href="{{ route('comics.create')}}" class="btn btn-primary">AGGIUNGI</a>
+                <a href="{{ route('comics.create')}}" class="btn btn-primary">Aggiungi</a>
             </div>
             @foreach ($comics as $comic)
             <div class="card">

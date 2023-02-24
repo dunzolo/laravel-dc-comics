@@ -6,11 +6,20 @@
             <div class="col-12 py-3">
                 <div class="d-flex justify-content-between align-items-center">
                     <h1>INSERISCI UN NUOVO COMIC</h1>
+                    <a href="{{ route('comics.index')}}" class="btn btn-primary">Torna ad elenco completo</a>
                 </div>
             </div>
         </div>
         <div>
-            {{-- visualizzazione degli errori --}}
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul class="mb-0 ps-0">
+                    @foreach ($errors->all() as $error)
+                        <li><i class="fa-solid fa-triangle-exclamation"></i>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         </div>
         <form action="{{ route('comics.store')}}" method="POST">
             @csrf

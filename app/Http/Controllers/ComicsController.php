@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Comic;
 
 class ComicsController extends Controller
@@ -36,6 +37,17 @@ class ComicsController extends Controller
      */
     public function store(Request $request)
     {
+        // CHIAVE-> utilizzare i valori degli attrivuti name dei campi input
+        $request->validate([
+            'title' => 'required | max:100',
+            'description' => 'nullable',
+            'thumb' => 'nullable',
+            'price' => 'required | max:10',
+            'series' => 'required | max:50',
+            'sale_date' => 'required',
+            'type' => 'required | max:30'
+        ]);
+
         // verrà creato un token ma verrà gestito da laravel
         $form_data = $request->all();
 

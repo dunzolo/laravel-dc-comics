@@ -16,12 +16,27 @@
                     <div class="card-image">
                         <img src="{{$comic['thumb']}}" alt="">
                         <div class="show-icon">
-                            <a href="{{ route('comics.show', ['comic' => $comic['id']])}}" class="btn btn-info btn-sm btn-square" title="Dettaglio">
-                                <i class="fas fa-eye"></i>
-                            </a>
-                            <a href="{{ route('comics.edit', ['comic' => $comic['id']])}}" class="btn btn-warning btn-sm btn-square" title="Modifica">
-                                <i class="fas fa-edit"></i>
-                            </a>
+                            <ul class="mb-0 ps-0 d-flex">
+                                <li class="p-1">
+                                    <a href="{{ route('comics.show', ['comic' => $comic['id']])}}" class="btn btn-info btn-sm btn-square" title="Dettaglio">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                </li>
+                                <li class="p-1">
+                                    <a href="{{ route('comics.edit', ['comic' => $comic['id']])}}" class="btn btn-warning btn-sm btn-square" title="Modifica">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </li>
+                                <li class="p-1">
+                                    <form action="{{ route('comics.destroy', ['comic' => $comic->id])}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" id="confirm-delete" class="btn btn-sm btn-square btn-danger delete-button" title="Cancella" data-title="{{ $comic->title }}">
+                                            <i class="fas fa-trash text-black"></i>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="card-title">
@@ -35,4 +50,5 @@
         </div>
     </div>
 </div>
+@include('modals.modal_delete');
 @endsection

@@ -14,7 +14,15 @@
             <div class="card">
                     {{-- tra parentesi quadre metto il nome del parametro con il relativo valore --}}
                     <div class="card-image">
-                        <img src="{{$comic['thumb']}}" alt="">
+                        @if (!(empty($comic['thumb'])))
+                            @if (str_contains($comic['thumb'], 'https:'))
+                            <img src="{{$comic['thumb']}}" alt="">
+                            @else
+                            <img src="https://leggi.subitoilmenu.it/image_not_found.png" alt="">
+                            @endif
+                        @else
+                            <img src="https://leggi.subitoilmenu.it/image_not_found.png" alt="">
+                        @endif
                         <div class="show-icon">
                             <ul class="mb-0 ps-0 d-flex">
                                 <li class="p-1">

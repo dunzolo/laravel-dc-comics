@@ -6,7 +6,15 @@
         <div class="container-small">
             <div class="cover">
                 <span class="comic-book">{{ $comic['type']}}</span>
-                <img src="{{$comic['thumb']}}" alt="cover">
+                @if (!(empty($comic['thumb'])))
+                    @if (str_contains($comic['thumb'], 'https:'))
+                    <img src="{{$comic['thumb']}}" alt="">
+                    @else
+                    <img src="https://leggi.subitoilmenu.it/image_not_found.png" alt="">
+                    @endif
+                @else
+                    <img src="https://leggi.subitoilmenu.it/image_not_found.png" alt="">
+                @endif
                 <span class="gallery">view gallery</span>
             </div>
         </div>
@@ -28,7 +36,11 @@
                         <span>CHECK</span>
                     </div>
                 </div>
+                @if (!(empty($comic['description'])))
                 <p>{{$comic['description']}}</p>
+                @else
+                <p class="text-danger"><i class="fa-solid fa-triangle-exclamation"></i> DESCRIZIONE NON DISPONIBILE</p>
+                @endif
             </div>
             <div class="col-4 adv">
                 <span>ADVERTISEMENT</span>
